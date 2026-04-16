@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Mundial Pro</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>PANEL DE <span>CONTROL</span></h1>
+    </header>
+
+    <main class="main-wrapper">
+        <section class="admin-section">
+            <h2 class="section-title">Actualizar Resultados Reales</h2>
+            <div class="match-list-admin" id="admin-matches">
+                <div class="admin-match-row">
+                    <div class="admin-match-info">
+                        <span class="match-date" style="display: block; font-size: 0.8rem; color: #666; margin-bottom: 5px;">14/06/2026 14:00</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="https://flagcdn.com/w40/pe.png" alt="PE" style="width: 30px; border-radius: 2px;">
+                            <span class="admin-match-row__teams">Perú vs Chile</span>
+                            <img src="https://flagcdn.com/w40/cl.png" alt="CL" style="width: 30px; border-radius: 2px;">
+                        </div>
+                    </div>
+                    <div class="admin-match-row__inputs">
+                        <input type="number" placeholder="L" class="form-input team__score--small">
+                        <input type="number" placeholder="V" class="form-input team__score--small">
+                    </div>
+                    <button class="btn btn--primary">Cerrar Partido</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <div class="admin-section__header">
+                <h2 class="section-title">Gestión de Participantes</h2>
+                <button class="btn btn--accent btn--small" id="btn-add-user">+ Agregar Participante</button>
+            </div>
+
+            <div class="table-container">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Correo</th> 
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-users-list">
+                        <tr>
+                            <td>Juan Pérez</td>
+                            <td>juan@correo.com</td>
+                            <td><span class="badge badge--success">Activo</span></td>
+                            <td>
+                                <div class="admin-actions">
+                                    <button class="btn btn--secondary btn--small">Inhabilitar</button>
+                                    <button class="btn btn--accent btn--small">Editar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal-user">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 id="modal-title">Agregar Participante</h3>
+                <button class="modal__close" id="close-modal">&times;</button>
+            </div>
+            <form class="modal__form" id="user-form">
+                <div class="auth-form__group">
+                    <label class="auth-form__label">Nombre Completo</label>
+                    <input type="text" id="modal-user-name" class="form-input" required>
+                </div>
+                <div class="auth-form__group">
+                    <label class="auth-form__label">Correo Electrónico</label>
+                    <input type="email" id="modal-user-email" class="form-input" required>
+                </div>
+                <div class="modal__actions">
+                    <button type="button" class="btn btn--secondary" id="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn--primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial Pro Predictor | Login</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <header class="header">
+        <h1 class="header__title">MUNDIAL<span>PRO</span></h1>
+        <p class="header__subtitle">Tu Polla Mundialista Gratuita</p>
+    </header>
+
+    <main class="main-container">
+        <section class="auth-card" id="auth-container">
+            <div class="auth-card__tabs">
+                <button class="auth-card__tab auth-card__tab--active" id="tab-login">Ingresar</button>
+                <button class="auth-card__tab" id="tab-register">Registrarse</button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="auth-form__group">
+                    <label for="login-email" class="auth-form__label">Correo Electrónico</label>
+                    <input type="email" id="login-email" class="auth-form__input" placeholder="ejemplo@gmail.com" required>
+                </div>
+                <div class="auth-form__group">
+                    <label for="login-password" class="auth-form__label">Contraseña</label>
+                    <input type="password" id="login-password" class="auth-form__input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="auth-form__button">Entrar a la Cancha</button>
+            </form>
+
+            <form id="register-form" class="auth-form auth-form--hidden">
+                <div class="auth-form__group">
+                    <label for="reg-name" class="auth-form__label">Nombre y Apellido</label>
+                    <input type="text" id="reg-name" class="auth-form__input" placeholder="Juan Pérez" required>
+                </div>
+                <div class="auth-form__group">
+                    <label for="reg-email" class="auth-form__label">Correo Electrónico</label>
+                    <input type="email" id="reg-email" class="auth-form__input" placeholder="tu@correo.com" required>
+                </div>
+                <div class="auth-form__group">
+                    <label for="reg-password" class="auth-form__label">Contraseña</label>
+                    <input type="password" id="reg-password" class="auth-form__input" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <button type="submit" class="auth-form__button auth-form__button--secondary">Crear Cuenta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mundial Pro Predictor - Fair Play garantizado.</p>
+    </footer>
+
+    <script src="js/auth.js" type="module"></script>
+</body>
+</html>
