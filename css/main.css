@@ -1,0 +1,15 @@
+/* 1. Base */
+@import url('base/_reset.css');
+@import url('base/_variables.css');
+
+/* 2. Componentes (BEM) */
+@import url('components/_auth.css');
+@import url('components/_button.css');
+/* Aquí irán los demás... */
+
+/* Estilos globales */
+body {
+    font-family: var(--font-main);
+    background-color: var(--gray-bg);
+    color: var(--black);
+}

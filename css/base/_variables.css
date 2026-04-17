@@ -1,0 +1,19 @@
+:root {
+    /* Paleta */
+    --primary: #2d5a27;
+    --secondary: #1a2a6c;
+    --accent: #f1c40f;
+    --white: #ffffff;
+    --black: #333333;
+    --gray-bg: #f4f4f4;
+    --gray-border: #dddddd;
+
+    /* Tipografía */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Layout */
+    --border-radius: 8px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+}

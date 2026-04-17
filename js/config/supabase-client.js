@@ -1,0 +1,6 @@
+// Configuración de conexión con Supabase
+const supabaseUrl = 'https://usydpvbmtpvpjbnqsdkr.supabase.co'; //https://usydpvbmtpvpjbnqsdkr.supabase.co
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzeWRwdmJtdHB2cGpibnFzZGtyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzODI0MzksImV4cCI6MjA5MTk1ODQzOX0.VH_Ri4oOyypbGKZh6xAXSIHQs0nDjRWm9LI6S0TLbPA'; //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzeWRwdmJtdHB2cGpibnFzZGtyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzODI0MzksImV4cCI6MjA5MTk1ODQzOX0.VH_Ri4oOyypbGKZh6xAXSIHQs0nDjRWm9LI6S0TLbPA
+
+// Usamos 'window.supabase' porque el CDN lo inyecta globalmente en el navegador
+export const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);

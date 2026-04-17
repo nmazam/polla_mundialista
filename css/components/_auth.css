@@ -1,0 +1,130 @@
+/* ==========================================================================
+   COMPONENTE: AUTH (Login & Registro)
+   ========================================================================== */
+
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.auth__container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: var(--spacing-lg);
+}
+
+.auth__header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.auth__title {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tabs para intercambiar entre Login y Registro */
+.auth__tabs {
+    display: flex;
+    border-bottom: 2px solid var(--gray-border);
+    margin-bottom: var(--spacing-md);
+}
+
+.auth__tab {
+    flex: 1;
+    padding: var(--spacing-sm);
+    font-weight: bold;
+    color: var(--black);
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+.auth__tab--active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* Campos del formulario */
+.auth__group {
+    margin-bottom: var(--spacing-md);
+}
+
+.auth__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.auth__input {
+    width: 100%;
+    outline: none;
+    transition: var(--transition);
+}
+
+.auth__input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(45, 90, 39, 0.1);
+}
+
+/* Botones */
+.auth__button {
+    width: 100%;
+    padding: var(--spacing-md);
+    color: var(--white);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    text-transform: uppercase;
+    margin-top: var(--spacing-sm);
+}
+
+.auth__button--primary {
+    background-color: var(--secondary);
+}
+
+.auth__button--primary:hover {
+    background-color: #121c4a;
+}
+
+.auth__button--accent {
+    background-color: var(--primary);
+}
+
+.auth__button--accent:hover {
+    background-color: #21441d;
+}
+
+/* Estados */
+.auth__form--hidden {
+    display: none;
+}
+
+.auth__notice {
+    font-size: 0.8rem;
+    color: #856404;
+    background-color: #fff3cd;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid #ffeeba;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .auth__container {
+        padding: var(--spacing-md);
+    }
+}

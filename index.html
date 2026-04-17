@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polla Mundialista 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <main id="auth-section" class="auth">
+        <div class="auth__container">
+            <header class="auth__header">
+                <h1 class="auth__title">Polla Mundialista 2026</h1>
+                <div class="auth__tabs">
+                    <button class="auth__tab auth__tab--active" id="tab-login" data-tab="login">Ingresar</button>
+                    <button class="auth__tab" id="tab-register" data-tab="register">Registrarse</button>
+                </div>
+            </header>
+
+            <form id="form-login" class="auth__form">
+                <div class="auth__group">
+                    <label for="login-email" class="auth__label">Correo</label>
+                    <input type="email" id="login-email" class="auth__input" placeholder="tu@correo.com" required>
+                </div>
+                <div class="auth__group">
+                    <label for="login-pass" class="auth__label">Contraseña</label>
+                    <input type="password" id="login-pass" class="auth__input" placeholder="********" required>
+                </div>
+                <button type="submit" class="auth__button auth__button--primary">Entrar a la Cancha</button>
+            </form>
+
+            <form id="form-register" class="auth__form auth__form--hidden">
+                <div class="auth__group">
+                    <label for="reg-name" class="auth__label">Nombre Completo</label>
+                    <input type="text" id="reg-name" class="auth__input" placeholder="Ej: Nelinho Maza" required>
+                </div>
+                <div class="auth__group">
+                    <label for="reg-email" class="auth__label">Correo</label>
+                    <input type="email" id="reg-email" class="auth__input" placeholder="tu@correo.com" required>
+                </div>
+                <div class="auth__group">
+                    <label for="reg-pass" class="auth__label">Contraseña</label>
+                    <input type="password" id="reg-pass" class="auth__input" placeholder="Crea una contraseña" required>
+                </div>
+                <p class="auth__notice">⚠️ Tu registro debe ser aprobado por el administrador.</p>
+                <button type="submit" class="auth__button auth__button--accent">Solicitar Registro</button>
+            </form>
+        </div>
+    </main>
+
+    <main id="app-section" class="app-content app-content--hidden">
+        <nav class="navbar">
+            <span class="navbar__user" id="user-display-name">Bienvenido, Usuario</span>
+            <button id="btn-logout" class="navbar__logout">Salir</button>
+        </nav>
+        
+        <section id="content-area">
+            </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
