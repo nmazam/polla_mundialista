@@ -1,0 +1,29 @@
+polla-mundial-2026/
+├── assets/                     # Recursos estáticos
+│   ├── img/                    # Fotos de estadios o fondos
+│   ├── icons/                  # Iconos (pelotas, trofeos, whatsapp)
+│   └── logos/                  # Logo de tu app o del torneo
+├── css/                        # Estilos organizados por BEM
+│   ├── base/                   
+│   │   ├── _variables.css      # Colores, fuentes y medidas
+│   │   └── _reset.css          # Limpieza de estilos por defecto
+│   ├── components/             
+│   │   ├── _auth.css           # Estilos del formulario único (Tabs)
+│   │   ├── _card.css           # Tarjetas de los partidos
+│   │   ├── _table.css          # Estilos de la tabla de posiciones
+│   │   ├── _modal.css          # Ventana de WhatsApp y alertas
+│   │   └── _navbar.css         # Menú de navegación móvil
+│   └── main.css                # Archivo maestro que importa todo
+├── js/                         # Lógica modular
+│   ├── config/
+│   │   └── supabase-client.js  # Conexión inicial con Supabase
+│   ├── modules/
+│   │   ├── auth.js             # Lógica de Login/Registro y pestañas
+│   │   ├── predictions.js      # Lógica para subir/editar pronósticos
+│   │   ├── leaderboard.js      # Cálculo y render de tablas (General/Fecha)
+│   │   └── admin.js            # Funciones exclusivas (Bloquear/Aprobar)
+│   └── main.js                 # Orquestador principal
+├── pages/                      # Vistas secundarias
+│   └── admin.html              # Panel exclusivo de administrador
+├── index.html                  # Punto de entrada (Auth y luego Dashboard)
+└── README.md                   # Documentación del proyecto
