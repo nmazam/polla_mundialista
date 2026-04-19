@@ -112,6 +112,14 @@
     display: none;
 }
 
+.auth.is-hidden {
+    display: none;
+}
+
+.app-content.is-hidden {
+    display: none;
+}
+
 .auth__notice {
     font-size: 0.8rem;
     color: #856404;

@@ -2,29 +2,48 @@ import { supabase } from './config/supabase-client.js';
 import { initAuth } from './modules/auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inicializamos la lógica de Auth (pestañas y formularios)
-    // Ahora le pasamos el cliente 'supabase' real importado arriba
     initAuth(supabase);
-    
-    // 2. Verificamos si hay una sesión activa al cargar la página
     checkUserSession();
 });
 
 async function checkUserSession() {
     try {
-        const { data: { user }, error } = await supabase.auth.getUser();
+        const { data: { user } } = await supabase.auth.getUser();
         
-        if (error) throw error;
-
         if (user) {
-            console.log("Usuario autenticado:", user.email);
-            // Aquí es donde ocultaremos el login y mostraremos el dashboard
-            // Por ahora solo lo dejamos listo para el siguiente paso
-            document.getElementById('auth-section').classList.add('app-content--hidden');
-            document.getElementById('app-section').classList.remove('app-content--hidden');
-            document.getElementById('user-display-name').textContent = `Bienvenido, ${user.user_metadata.full_name || 'Participante'}`;
+            // Cambiamos 'perfiles' por 'profiles' y 'nombre_completo' por 'nombre'
+            const { data: perfil, error } = await supabase
+                .from('profiles') 
+                .select('is_approved, nombre, rol')
+                .eq('id', user.id)
+                .single();
+
+            if (error) throw error;
+
+            if (perfil.is_approved) {
+                // Ocultar sección de login
+                const authSection = document.getElementById('auth-section');
+                const appSection = document.getElementById('app-section');
+                
+                if(authSection) authSection.classList.add('is-hidden');
+                if(appSection) appSection.classList.remove('is-hidden');
+                
+                // Mostrar nombre del usuario
+                const userDisplay = document.getElementById('user-display-name');
+                if(userDisplay) userDisplay.textContent = `Bienvenido, ${perfil.nombre}`;
+
+                // Si es admin, podrías poner un mensaje en consola para verificar
+                if (perfil.rol === 'admin') {
+                    console.log("Eres administrador. Puedes ir a /pages/admin.html");
+                }
+
+            } else {
+                alert("Tu cuenta aún no ha sido aprobada.");
+                await supabase.auth.signOut();
+                window.location.reload();
+            }
         }
     } catch (err) {
-        console.log("No hay sesión activa o hubo un error:", err.message);
+        console.log("Sesión no activa:", err.message);
     }
 }
