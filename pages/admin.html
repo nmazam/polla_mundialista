@@ -2,28 +2,65 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - Admin</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="admin-panel">
+    
     <nav class="navbar">
-        <span class="navbar__title">Gestión de Usuarios</span>
+        <span class="navbar__title">Panel Administrativo - Polla 2026</span>
         <a href="../index.html" class="navbar__link">Volver al Inicio</a>
     </nav>
 
     <main class="admin__container">
-        <h2>Usuarios Pendientes</h2>
-        <table class="table" id="table-pending-users">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody id="list-pending">
-                </tbody>
-        </table>
+        <section class="admin__toolbar">
+            <div class="toolbar__group">
+                <h3>Gestión de Comunidad</h3>
+                <button id="btn-view-users" class="admin__button">Aprobar Usuarios</button>
+            </div>
+            
+            <div class="toolbar__group">
+                <h3>Control del Torneo</h3>
+                <button id="btn-view-results" class="admin__button">Cargar Resultados</button>
+                <button id="btn-view-forecasts" class="admin__button">Gestionar Pronósticos</button>
+            </div>
+        </section>
+
+        <hr class="admin__divider">
+
+        <section id="admin-work-area">
+            
+            <div id="section-users" class="admin__content">
+                <h2>Usuarios Pendientes de Aprobación</h2>
+                <table class="table" id="table-pending-users">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-pending">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="section-results" class="admin__content is-hidden">
+                <h2>Ingreso de Resultados Oficiales</h2>
+                <div id="results-container">
+                    <p>Aquí aparecerá la lista de partidos para ingresar marcadores.</p>
+                </div>
+            </div>
+
+            <div id="section-forecasts" class="admin__content is-hidden">
+                <h2>Soporte de Pronósticos</h2>
+                <div id="forecasts-container">
+                    <p>Aquí podrás buscar usuarios y editar sus jugadas.</p>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
